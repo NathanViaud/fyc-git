@@ -19,38 +19,42 @@ export default defineConfig({
             },
             sidebar: [
                 {
+                    label: "Vidéos",
+                    autogenerate: { directory: "01-videos" },
+                },
+                {
                     label: "Débutant",
                     collapsed: false,
                     items: [
-                        "01-beginner/01-prerequisites",
-                        "01-beginner/02-intro",
+                        "02-beginner/01-prerequisites",
+                        "02-beginner/02-intro",
                         {
                             label: "Premiers pas",
-                            autogenerate: { directory: "01-beginner/03-first-steps" },
+                            autogenerate: { directory: "02-beginner/03-first-steps" },
                         },
                         {
                             label: "Principes des branches",
-                            autogenerate: { directory: "01-beginner/04-branches" },
+                            autogenerate: { directory: "02-beginner/04-branches" },
                         },
                         {
                             label: "Exemples d'utilisation",
-                            autogenerate: { directory: "01-beginner/05-examples" },
+                            autogenerate: { directory: "02-beginner/05-examples" },
                         },
-                        "01-beginner/06-practical",
+                        "02-beginner/06-practical",
                     ],
                 },
                 {
                     label: "Avancés",
                     collapsed: false,
                     items: [
-                        "02-advanced/01-concepts",
+                        "03-advanced/01-concepts",
                         {
                             label: "Commandes",
-                            autogenerate: { directory: "02-advanced/02-commands" },
+                            autogenerate: { directory: "03-advanced/02-commands" },
                         },
-                        "02-advanced/03-branching-strategy",
-                        "02-advanced/04-tags",
-                        "02-advanced/05-security",
+                        "03-advanced/03-branching-strategy",
+                        "03-advanced/04-tags",
+                        "03-advanced/05-security",
                     ],
                 },
                 {
@@ -59,13 +63,17 @@ export default defineConfig({
                     items: [
                         {
                             label: "Plateformes de gestion de code",
-                            autogenerate: { directory: "03-tools/01-platforms" },
+                            autogenerate: { directory: "04-tools/01-platforms" },
                         },
-                        "03-tools/02-pull-requests",
-                        "03-tools/03-workflow",
-                        "03-tools/04-ci",
-                        "03-tools/05-deployment",
+                        "04-tools/02-pull-requests",
+                        "04-tools/03-workflow",
+                        "04-tools/04-ci",
+                        "04-tools/05-deployment",
                     ],
+                },
+                {
+                    label: "Self-hosted GitLab",
+                    autogenerate: { directory: "05-self-hosted" },
                 },
             ],
         }),
