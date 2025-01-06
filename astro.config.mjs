@@ -17,7 +17,7 @@ export default defineConfig({
             },
             customCss: ["./src/styles/custom.css"],
             social: {
-                github: "https://github.com/withastro/starlight",
+                github: "https://github.com/NathanViaud/fyc-git",
             },
             sidebar: [
                 {
