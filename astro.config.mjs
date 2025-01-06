@@ -41,6 +41,7 @@ export default defineConfig({
                 },
                 {
                     label: "Avancés",
+                    collapsed: false,
                     items: [
                         "02-advanced/01-concepts",
                         {
@@ -50,6 +51,20 @@ export default defineConfig({
                         "02-advanced/03-branching-strategy",
                         "02-advanced/04-tags",
                         "02-advanced/05-security",
+                    ],
+                },
+                {
+                    label: "Outils complémentaires",
+                    collapsed: false,
+                    items: [
+                        {
+                            label: "Plateformes de gestion de code",
+                            autogenerate: { directory: "03-tools/01-platforms" },
+                        },
+                        "03-tools/02-pull-requests",
+                        "03-tools/03-workflow",
+                        "03-tools/04-ci",
+                        "03-tools/05-deployment",
                     ],
                 },
             ],
