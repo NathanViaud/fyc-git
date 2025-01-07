@@ -12,3 +12,8 @@
     --sl-color-accent: #f14e32;
     --sl-color-accent-high: #182775;
 }
+
+iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
