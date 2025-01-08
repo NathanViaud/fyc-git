@@ -63,14 +63,10 @@ export default defineConfig({
                     label: "Outils complémentaires",
                     collapsed: false,
                     items: [
-                        {
-                            label: "Plateformes de gestion de code",
-                            autogenerate: { directory: "04-tools/01-platforms" },
-                        },
+                        "04-tools/01-platforms",
                         "04-tools/02-pull-requests",
-                        "04-tools/03-workflow",
-                        "04-tools/04-ci",
-                        "04-tools/05-deployment",
+                        "04-tools/03-ci",
+                        "04-tools/04-deployment",
                     ],
                 },
                 {
