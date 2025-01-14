@@ -73,6 +73,10 @@ export default defineConfig({
                     label: "Self-hosted GitLab",
                     autogenerate: { directory: "05-self-hosted" },
                 },
+                {
+                    label: "Evaluations",
+                    autogenerate: { directory: "06-evaluations" },
+                },
             ],
         }),
     ],
