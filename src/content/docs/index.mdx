@@ -15,7 +15,7 @@ hero:
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 ## Contenus
 
@@ -26,4 +26,13 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 	<Card title="Cours écrit" icon="document">
 		Suivez le cours écrit
 	</Card>
+</CardGrid>
+
+## Auteurs
+
+<CardGrid>
+    <LinkCard title="Nathan Viaud" href="https://github.com/NathanViaud" />
+    <LinkCard title="Julien Clerc" href="https://github.com/Julien-Clerc" />
+    <LinkCard title="Oussama Fatnassi" href="https://github.com/OussamaFatnassi" />
+    <LinkCard title="Amine Asfar" href="https://github.com/amine-asfar" />
 </CardGrid>
