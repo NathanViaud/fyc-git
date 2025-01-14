@@ -22,11 +22,12 @@ export default defineConfig({
             sidebar: [
                 {
                     label: "Vidéos",
+                    collapsed: true,
                     autogenerate: { directory: "01-videos" },
                 },
                 {
                     label: "Débutant",
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                         "02-beginner/01-prerequisites",
                         "02-beginner/02-intro",
@@ -47,7 +48,7 @@ export default defineConfig({
                 },
                 {
                     label: "Avancés",
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                         "03-advanced/01-concepts",
                         {
@@ -61,7 +62,7 @@ export default defineConfig({
                 },
                 {
                     label: "Outils complémentaires",
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                         "04-tools/01-platforms",
                         "04-tools/02-pull-requests",
@@ -71,10 +72,12 @@ export default defineConfig({
                 },
                 {
                     label: "Self-hosted GitLab",
+                    collapsed: true,
                     autogenerate: { directory: "05-self-hosted" },
                 },
                 {
                     label: "Evaluations",
+                    collapsed: true,
                     autogenerate: { directory: "06-evaluations" },
                 },
             ],
