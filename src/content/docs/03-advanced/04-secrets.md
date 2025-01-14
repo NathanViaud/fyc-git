@@ -1,7 +1,6 @@
 ---
-title: Bonnes pratiques & sécurité
+title: Gestion des secrets et informations sensibles
 ---
-## Gestion des secrets et informations sensibles
 1. **Ne jamais commiter de secrets :**
    - Mots de passe
    - Clés API

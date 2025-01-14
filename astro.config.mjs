@@ -55,8 +55,8 @@ export default defineConfig({
                             autogenerate: { directory: "03-advanced/02-commands" },
                         },
                         "03-advanced/03-branching-strategy",
-                        "03-advanced/04-tags",
-                        "03-advanced/05-security",
+                        "03-advanced/04-secrets",
+                        "03-advanced/05-tags",
                     ],
                 },
                 {
