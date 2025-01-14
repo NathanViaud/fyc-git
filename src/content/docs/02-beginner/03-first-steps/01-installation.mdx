@@ -1,0 +1,76 @@
+---
+title: Installation et configuration
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Installation
+### Windows
+Téléchargez l'installeur depuis [git-scm.com](https://git-scm.com/) et suivez les instructions.
+
+### macOS
+Utilisez Homebrew pour installer Git.
+```shell
+brew install git
+```
+
+**Pour installer Homebrew si vous ne l'avez pas**
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### Linux
+Utilisez le gestionnaire de paquets de votre distribution.
+<Tabs>
+  <TabItem label="Debian/Ubuntu">
+    ```shell
+    sudo apt-get install git
+    ```
+  </TabItem>
+  <TabItem label="Fedora">
+      ```shell
+      sudo yum install git
+      ```
+  </TabItem>
+  <TabItem label="CentOS">
+      ```shell
+      sudo dnf install git
+      ```
+  </TabItem>
+</Tabs>
+
+## Configuration
+  1. Configurez votre nom et votre adresse e-mail.
+        ```shell
+        git config --global user.name "Votre Nom"
+        git config --global user.email "votre-email@example.com"
+        ```
+
+  2. Vérifiez la configuration.
+        ```shell
+        git config --list
+        ```
+
+### Installation d'une clé SSH
+#### Pourquoi installer une clé SSH ?
+    - **Sécurité** : Les clés SSH offrent une méthode d'authentification plus sécurisée que les mots de passe. Elles utilisent la cryptographie pour garantir que seules les personnes autorisées peuvent accéder à vos dépôts.
+    - **Praticité** : Une fois configurée, l'authentification par clé SSH permet de se connecter à des dépôts distants sans avoir à saisir un mot de passe à chaque fois.
+    - **Automatisation** : Facilite l'automatisation des tâches de déploiement et d'intégration continue (CI) en permettant des connexions sécurisées sans intervention manuelle.
+
+#### Génération d'une nouvelle clé SSH
+```shell
+ssh-keygen -t rsa -b 4096 -C "votre-email@example.com"
+```
+Cette commande génère une nouvelle paire de clés SSH (une clé publique et une clé privée). Vous pouvez accepter les valeurs par défaut pour l'emplacement de la clé (`~/.ssh/id_rsa`).
+
+#### Ajout de la clé SSH à l'agent SSH
+```shell
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+```
+Ces commandes ajoutent votre clé privée à l'agent SSH, ce qui permet de gérer les connexions SSH sans avoir à saisir votre phrase de passe à chaque fois.
+
+#### Copie de la clé SSH dans le presse-papiers
+```shell
+cat ~/.ssh/id_rsa.pub
+```
+Cette commande affiche votre clé publique SSH. Vous pouvez copier cette clé et l'ajouter à votre compte GitHub, GitLab ou Bitbucket en suivant les instructions de la plateforme.

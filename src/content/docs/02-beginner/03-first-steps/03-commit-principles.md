@@ -1,3 +1,0 @@
----
-title: Principes du commit
----

@@ -1,0 +1,55 @@
+---
+title: "Exercice : Créer et gérer un projet simple avec Git"
+---
+import { Steps } from '@astrojs/starlight/components';
+
+<Steps>
+1. Initialisation du projet
+    - Créez un nouveau dossier pour votre projet
+    - Initialier un dépôt Git dans ce dossier
+    ```shell
+    mkdir mon-projet
+    cd mon-projet
+    git init
+    ```
+
+2. Ajout des fichiers
+    - Créez quelques fichiers (par exemple, `index.html` et `style.css`).
+    - Ajoutez ces fichiers à l'index.
+
+    ```shell
+    touch index.html style.css
+    git add index.html style.css
+    ``
+
+3. Premier commit
+    - Faites un commit avec un message descriptif
+    ```shell
+    git commit -m "Ajout des fichiers initiaux"
+    ```
+
+4. Création et gestion des branches
+    - Créez une nouvelle branche
+    - Changez de branche et faites des modifications
+    ```shell
+    git branch nouvelle-branche
+    git checkout nouvelle-branche
+    touch nouveau-fichier.html
+    git add nouveau-fichier.html
+    git commit -m "Ajout d'un nouveau fichier"
+    ```
+
+5. Fusion de branches
+    - Revenez à la branche principale et fusionnez la nouvelle branche
+    ```shell
+    git checkout master
+    git merge nouvelle-branche
+    ```
+
+6. Partage du projet
+    - Poussez votre projet sur un dépôt distant (GitHub).
+    ```shell
+    git remote add origin <https://github.com/votre-utilisateur/votre-projet.git>
+    git push -u origin master
+    ```
+</Steps>

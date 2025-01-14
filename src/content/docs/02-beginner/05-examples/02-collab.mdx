@@ -1,0 +1,27 @@
+---
+title: "Exemple 2 : Collaboration avec un ami"
+---
+import { Steps } from '@astrojs/starlight/components';
+
+<Steps>
+1. Partager le projet sur un dépôt distant (GitHub)
+    ```shell
+    git remote add origin <https://github.com/votre-utilisateur/votre-projet.git>
+    git push -u origin master
+    ```
+    Ces commandes ajoutent un dépôt distant nommé `origin` et poussent les modifications locales vers ce dépôt.
+
+2. Votre ami clone le dépôt
+    ```shell
+    git clone <https://github.com/votre-utilisateur/votre-projet.git>
+    ```
+    Cette commande clone le dépôt distant sur la machine de votre ami.
+
+3. Votre ami fait des modifications et les pousses
+    ```shell
+    git add nouveau-fichier.html
+    git commit -m "Ajout d'un nouveau fichier"
+    git push
+    ```
+    Ces commandes ajoutent un nouveau fichier, enregistrent les modifications et poussent les modifications vers le dépôt distant.
+</Steps>
