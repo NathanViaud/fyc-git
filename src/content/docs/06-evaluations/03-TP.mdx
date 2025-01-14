@@ -1,0 +1,296 @@
+---
+title: TP
+---
+## Scénario 1 : Ajout d'un Nouveau Pokémon (Caterpie)
+
+### Contexte :
+Vous avez un projet de Pokedex utilisant Astro et des fichiers **`.md`**. Vous avez déjà ajouté les 9 premiers Pokémon de la première génération. Vous souhaitez maintenant ajouter un nouveau Pokémon, **Caterpie**.
+
+### Étapes :
+
+1. Créez une nouvelle branche à partir de **`main`**.
+2. Ajoutez le nouveau Pokémon dans le fichier approprié.
+3. Ajoutez le fichier modifié à la zone de staging.
+4. Créez un commit avec un message approprié.
+5. Poussez les modifications vers le dépôt distant.
+
+### Tutoriel :
+1. **Créer une nouvelle branche à partir de `main` :**
+    ```bash
+    git checkout -b feature/add-caterpie
+
+    ```
+
+2. **Ajouter le nouveau Pokémon dans le fichier approprié :**
+    ```bash
+    # Créez le répertoire pour la première génération si ce n'est pas déjà fait
+    mkdir -p src/content/docs/First\ gen
+
+    # Ajoutez le fichier Markdown pour Chenipan
+    echo '---
+    title: "**Caterpie**"
+    ---
+
+    **Caterpie** is a Bug-type Pokémon.' > src/content/docs/First\ gen/10-caterpie.md
+    ```
+
+3. **Ajouter le fichier modifié à la zone de staging :**
+    ```bash
+    git add src/content/docs/First\ gen/10-chenipan.md
+    ```
+
+4. **Créer un commit avec un message approprié :**
+    ```bash
+    git commit -m "Add new pokemon Caterpie"
+    ```
+
+5. **Pousser les modifications vers le dépôt distant :**
+    ```bash
+    git push origin feature/add-caterpie
+    ```
+
+## Scénario 2 : Ajout d'une Nouvelle Fonctionnalité (Deuxième Génération)
+
+### Contexte :
+Vous souhaitez ajouter une nouvelle fonctionnalité à votre Pokedex, par exemple, ajouter les Pokémon de la deuxième génération.
+
+### Tutoriel :
+
+1. **Créer une nouvelle branche `feature/generation-2` à partir de `main` :**
+    ```bash
+    git checkout -b feature/generation-2
+    ```
+2. **Ajouter les fichiers nécessaires pour la nouvelle fonctionnalité :**
+    ```bash
+    # Créez le répertoire pour la deuxième génération
+    mkdir -p src/content/docs/Second\ gen
+
+    # Ajoutez les fichiers Markdown pour les Pokémon de la deuxième génération
+    echo '---
+    title: "Chikorita"
+    ---
+
+    Chikorita is a Grass-type Pokémon.' > src/content/docs/Second\ gen/01-chikorita.md
+
+    echo '---
+    title: "Cyndaquil"
+    ---
+
+    Cyndaquil is a Fire-type Pokémon.' > src/content/docs/Second\ gen/02-cyndaquil.md
+
+    echo '---
+    title: "Totodile"
+    ---
+
+    Totodile is a Water-type Pokémon.' > src/content/docs/Second\ gen/03-totodile.md
+    ```
+
+3. **Ajouter les fichiers à la zone de staging :**
+    ```bash
+    git add src/content/docs/Second\ ge
+    ```
+
+4. **Créer un commit avec un message approprié :**
+    ```bash
+    git commit -m "Ajout des Pokémon de la deuxième génération"
+    ```
+
+5. **Pousser les modifications vers le dépôt distant :**
+    ```bash
+    git push origin feature/generation-2
+    ```
+
+6. **Créer une pull request pour fusionner la branche `feature/generation-2` dans `main` :**
+    - Allez sur la page de votre dépôt sur GitHub.
+    - Créez une pull request pour fusionner `feature/generation-2` dans `main`.
+
+Vous pouvez aussi au souhait, merge in line votre branche en utilisant au choix la commande **`git merge` ou `git rebase`**
+
+## Scénario 3 : Annulation d'un Commit
+
+### Contexte :
+Vous avez fait un commit par erreur en ajoutant des informations incorrectes à un Pokémon. Vous souhaitez annuler ce commit tout en conservant les modifications dans la zone de staging.
+
+### Tutoriel :
+
+1. **Faire un commit par erreur :**
+    ```bash
+    # Par exemple, modifiez un fichier et faites un commit
+    echo "Erreur" >> src/content/docs/First\ gen/01-bulbasaur.md
+    git add src/content/docs/First\ gen/01-bulbasaur.md
+    git commit -m "Commit par erreur"
+    ```
+
+2. **Utiliser `git reset --soft` pour annuler le dernier commit :**
+    ```bash
+    git reset --soft HEAD~1
+    ```
+
+3. **Modifier les fichiers si nécessaire :**
+    ```bash
+    # Par exemple, corrigez le fichier source
+    nano src/content/docs/First\ gen/01-bulbasaur.md
+    ```
+
+4. **Ajouter les fichiers modifiés à la zone de staging :**
+    ```bash
+    git add src/content/docs/First\ gen/01-bulbasaur.md
+    ```
+
+5. **Créer un nouveau commit avec un message approprié :**
+    ```bash
+    git commit -m "Correction des informations sur Bulbasaur"
+    ```
+
+6. **Pousser les modifications vers le dépôt distant :**
+    ```bash
+    git push origin <branche_actuelle>
+    ```
+
+
+## Scénario 4 : Utilisation de `git stash`
+
+### Contexte :
+Vous travaillez sur l'ajout de nouveaux Pokémon de deuxième génération mais vous devez basculer rapidement vers une autre branche pour corriger un bug urgent dans la page de détails d’un Pokémon de première gen.
+
+### Tutoriel :
+1. **Sauvegarder temporairement vos modifications non commitées avec `git stash` :**
+    ```bash
+    git stash
+    ```
+
+2. **Basculez vers la branche où vous devez corriger le bug :**
+    ```bash
+    git checkout main
+    ```
+
+3. **Corrigez le bug et faites un commit**
+
+4. **Revenez à votre branche de travail initiale :**
+    ```bash
+    git checkout feature/generation-2
+    ```
+
+5. **Appliquez les modifications sauvegardées avec `git stash apply` :**
+    ```bash
+    git stash apply
+    ```
+
+## Scénario 5 : Utilisation de `git cherry-pick`
+
+### Contexte :
+Vous avez un commit spécifique dans la branche `feature/generation-2` qui ajoute Mewtwo, un Pokémon de la première génération. Vous souhaitez appliquer ce commit à la branche `main`.
+
+### Tutoriel :
+
+1. **Basculez vers la branche `main` :**
+    ```bash
+    git checkout main
+    ```
+
+2. **Utilisez `git cherry-pick` pour appliquer le commit spécifique :**
+    ```bash
+    git cherry-pick <commit-hash>
+    ```
+
+3. **Poussez les modifications vers le dépôt distant :**
+    ```bash
+    git push origin main
+    ```
+
+
+## Scénario 6 : Utilisation de `git revert`
+
+### Contexte :
+Vous avez poussé un commit vers la branche principale qui contient une erreur critique dans les informations d'un Pokémon. Vous souhaitez annuler ce commit tout en préservant l'historique.
+
+### Tutoriel :
+
+1. **Utilisez `git revert` pour créer un nouveau commit qui annule les changements du commit précédent :**
+    ```bash
+    git revert <commit-hash>
+    ```
+
+2. **Poussez les modifications vers le dépôt distant :**
+    ```bash
+    git push origin <branche_actuelle>
+    ```
+
+## Scénario 7 : Utilisation de `git tag`
+
+### Contexte :
+Vous avez terminé le développement de la première version de votre Pokedex et vous souhaitez marquer cette version avec un tag annoté.
+
+### Tutoriel :
+
+1. **Créez un tag annoté pour marquer la nouvelle version :**
+    ```bash
+    git tag -a v1.0.0 -m "Version 1.0.0 du Pokedex"
+    ```
+
+2. **Poussez le tag vers le dépôt distant :**
+    ```bash
+    git push origin v1.0.0
+    ```
+
+## Scénario 8 : Création d'une GitHub Pages pour un Pokedex avec Astro
+
+### Contexte :
+Vous souhaitez à présent héberger ce site statique sur GitHub Pages.
+
+### Tutoriel :
+
+1. Configurer Astro pour GitHub Pages
+    ```yaml
+    import { defineConfig } from 'astro/config'
+
+    export default defineConfig({
+      site: 'https://astronaut.github.io',
+      base: 'my-repo',
+      integrations: [
+    	  ...
+      ]
+    })
+    ```
+    - **site :** Doit être basée sur votre nom d’utilisateur: `https://<username>.github.io`
+    - **base**: Doit être le nom de votre repertoire git, pour qu’Astro soit capable de considérer le nom du repertoire comme la racine du site
+
+2. Configurer la GitHub Action
+    1. Créer un fichier YAML à l’emplacement `.github/workflows/deploy.yml` et copier le YAML suivant :
+        ```yaml
+        name: Deploy to GitHub Pages
+
+        on:
+          push:
+            branches: [ main ]
+          workflow_dispatch:
+
+        permissions:
+          contents: read
+          pages: write
+          id-token: write
+
+        jobs:
+          build:
+            runs-on: ubuntu-latest
+            steps:
+              - name: Checkout your repository using git
+                uses: actions/checkout@v4
+              - name: Install, build, and upload your site
+                uses: withastro/action@v3
+
+          deploy:
+            needs: build
+            runs-on: ubuntu-latest
+            environment:
+              name: github-pages
+              url: ${{ steps.deployment.outputs.page_url }}
+            steps:
+              - name: Deploy to GitHub Pages
+                id: deployment
+                uses: actions/deploy-pages@v4
+        ```
+
+    2. Sur GitHub, allez dans les paramètres de votre repertoire, et trouvez la section Pages.
+    3. Choisissez GitHub Actions comme source.
+    4. Committer le nouveau fichier de workflow de votre site et pusher le sur GitHub
