@@ -6,29 +6,29 @@ Dans un projet git, il est souvent d’usage de définir un modèle de brancheme
 ## Le git flow
 Git Flow est un modèle de gestion de branches pour Git, conçu pour faciliter le développement collaboratif et la gestion des versions de logiciels. Il a été popularisé par Vincent Driessen dans un article de blog en 2010\. Voici les principales branches et les règles de base du Git Flow :
 ### Branches principales
-1. main (ou master) :
+1. `main` (ou `master`) :
    - Contient le code de production.
    - Toujours stable et prêt à être déployé.
    - Les tags de version sont créés à partir de cette branche.
 
-2. develop :
+2. `develop` :
    - Contient le code de développement.
    - Intègre les nouvelles fonctionnalités et les corrections de bugs.
    - Peut être instable car elle est en constante évolution.
 
 ### Branches de support
-1. feature/ :
+1. `feature/` :
    - Utilisées pour développer de nouvelles fonctionnalités.
    - Créées à partir de `develop`.
    - Fusionnées (merged) dans `develop` une fois la fonctionnalité terminée.
 
-2. release/ :
+2. `release/` :
    - Utilisées pour préparer une nouvelle version de production.
    - Créées à partir de `develop`.
    - Permettent de stabiliser le code avant de le fusionner dans `main`.
    - Une fois la version stable, fusionnée dans `main` et `develop`.
 
-3. hotfix/ :
+3. `hotfix/` :
    - Utilisées pour corriger des bugs critiques en production.
    - Créées à partir de `main`.
    - Une fois le bug corrigé, fusionnée dans `main` et `develop`.
@@ -65,7 +65,7 @@ Le Trunk Based Development (TBD) est une autre stratégie de gestion de branches
 
 ### Branches de support
 
-1. features/ :
+1. `features/` :
    - Branches courtes.
    - Créées à partir du trunk.
    - Fusionnées rapidement dans le trunk.
